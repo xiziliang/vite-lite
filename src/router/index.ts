@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteLocationNormalized,type RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory, RouteLocationNormalized, type RouteRecordRaw } from 'vue-router';
 
 export const $routes: RouteRecordRaw[] = [
   {

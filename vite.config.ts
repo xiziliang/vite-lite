@@ -16,6 +16,8 @@ export default defineConfig({
   },
   plugins: [vue(), pluginTs()],
   server: {
+    host: '0.0.0.0',
+    open: true,
     port: 3000,
   },
 })
