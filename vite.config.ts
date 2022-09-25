@@ -1,9 +1,10 @@
 /// <reference types="node" />
 
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
 import * as path from 'path'
-import pluginTs from 'vite-plugin-ts';
+import PluginTs from 'vite-plugin-ts'
+import Unocss from 'unocss/vite'
 
 const rootPath = __dirname;
 
@@ -14,7 +15,13 @@ export default defineConfig({
       '@': `${path.resolve(rootPath, 'src')}`,
     },
   },
-  plugins: [vue(), pluginTs()],
+  plugins: [
+    Vue(), 
+    PluginTs(),
+    // https://github.com/antfu/unocss
+    // see unocss.config.ts for config
+    Unocss(),
+  ],
   server: {
     host: '0.0.0.0',
     open: true,
