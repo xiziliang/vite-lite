@@ -1,22 +1,28 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useCounterStore } from '@/store'
 
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+const counter = useCounterStore()
+
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <el-button @click="count++">count is {{ count }}</el-button>
+    <div class="btns" flex="~ gap4" items-center>
+      <el-button @click="count++">count is {{ count }}</el-button>
+      <div flex-1 text-center>{{ counter.count }} ----- {{ counter.doubleCount }}</div> 
+      <el-button type="primary" size="default" @click="counter.increment">加一</el-button>
+    </div>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
   </div>
-
   <p>
     <a href="https://github.com/xiziliang/vite-lite" target="_blank"
       >npx degit xiziliang/vite-lite my-vite-lite</a
