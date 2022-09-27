@@ -40,6 +40,11 @@
 
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
 
+### VS Code插件
+
+- [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) - 一个让你在写UnoCss时候更得心应手的插件
+- [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) - 一个可以在线预览icon的插件
+
 ## 现在可以试试!
 
 
