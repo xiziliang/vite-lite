@@ -1,7 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@iconify-json/carbon': ^1.1.8
+  '@iconify-json/logos': ^1.1.16
+  '@iconify-json/mdi': ^1.1.33
+  '@iconify-json/tabler': ^1.1.36
   '@types/node': ^17.0.23
+  '@unocss/reset': ^0.45.25
   '@vitejs/plugin-vue': ^3.1.0
   '@vueuse/core': ^9.3.0
   element-plus: ^2.2.17
@@ -16,6 +21,11 @@ specifiers:
   vue-tsc: ^0.40.4
 
 dependencies:
+  '@iconify-json/carbon': 1.1.8
+  '@iconify-json/logos': 1.1.16
+  '@iconify-json/mdi': 1.1.33
+  '@iconify-json/tabler': 1.1.36
+  '@unocss/reset': 0.45.25
   '@vueuse/core': 9.3.0_vue@3.2.39
   element-plus: 2.2.17_vue@3.2.39
   pinia: 2.0.22_typescript@4.8.3+vue@3.2.39
@@ -308,6 +318,30 @@ packages:
       '@floating-ui/core': 1.0.1
     dev: false
 
+  /@iconify-json/carbon/1.1.8:
+    resolution: {integrity: sha512-aSoMgvZyvIXadLbMXcfS+qy8CVxSExvvp8Vd/nCrupLFc0KLKSukRInnVNc63zaHqoe1NBf5xUrgfyRYYfaKWQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/logos/1.1.16:
+    resolution: {integrity: sha512-ka6Irz4qNuk+RNDDVZEMTw3ceUk43FpBxReikswTrUXPlis6LgLZNyh9SV00SFeuBdT+A5gF45kJ124IxtOL5g==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/mdi/1.1.33:
+    resolution: {integrity: sha512-P8zIjwYvQ6SsmHc02O4oNV3jsqbL4bXcfKSt9MfCPMBvF9CLzz6QHMzQgt/Okgsb8wfhkfSQeREp+dSxV9pLRA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/tabler/1.1.36:
+    resolution: {integrity: sha512-I34Lihg0qM0jC4093JuzjUCPmZpRDk5TyAD2JNAbWrBnwQINdGpvzkct4QJwRlkp2KJCQBNeM4S9PSptol8u5A==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: false
@@ -525,6 +559,10 @@ packages:
 
   /@unocss/reset/0.45.22:
     resolution: {integrity: sha512-jNLWr5tZ2X+fMCNXYXJe5/AUeTPeWcXke0XpWSXrQ7f5Bbk1TpbUFcV7ln4DvUwRkQsmcDYxdj7em/wN1U0mSQ==}
+    dev: false
+
+  /@unocss/reset/0.45.25:
+    resolution: {integrity: sha512-ab4sP4ybikPq6eje66SIgL/KAkrx6pjx03KFlziHGdfnXpNxTYP5RCXXw5rcVX778NyV6Lk0VyidC8jRp4XtTQ==}
     dev: false
 
   /@unocss/scope/0.45.22:

@@ -9,6 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-json/carbon": "^1.1.8",
+    "@iconify-json/logos": "^1.1.16",
+    "@iconify-json/mdi": "^1.1.33",
+    "@iconify-json/tabler": "^1.1.36",
+    "@unocss/reset": "^0.45.25",
     "@vueuse/core": "^9.3.0",
     "element-plus": "^2.2.17",
     "pinia": "^2.0.22",

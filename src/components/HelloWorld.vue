@@ -34,6 +34,24 @@ const counter = useCounterStore()
     in your IDE for a better DX
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+
+  <nav text-xl mt-6>
+    <a class="icon-btn mx-2">
+      <div i-logos:chrome />
+    </a>
+
+    <button class="icon-btn mx-2" >
+      <div i="carbon-sun" />
+    </button>
+
+    <a class="icon-btn mx-2" href="https://vuejs.org/">
+      <div i-logos-vue />
+    </a>
+
+    <a class="icon-btn mx-2" href="https://github.com/antfu/vitesse" target="_blank" title="GitHub">
+      <div i-logos:github-icon />
+    </a>
+  </nav>
 </template>
 
 <style scoped>

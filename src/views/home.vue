@@ -5,7 +5,7 @@
   </script>
   
   <template>
-    <div>
+    <div flex="~ gap-4">
       <a href="https://vitejs.dev" target="_blank">
         <img src="@/assets/vite.svg" class="logo" alt="Vite logo" />
       </a>
@@ -21,7 +21,7 @@
   
   <style lang="scss" scoped>
   .logo {
-    height: 6em;
+    height: 10em;
     padding: 1.5em;
     will-change: filter;
   }
