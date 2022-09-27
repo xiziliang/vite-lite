@@ -41,7 +41,7 @@ const counter = useCounterStore()
     </a>
 
     <button class="icon-btn mx-2" >
-      <div i="carbon-sun" />
+      <div i-carbon-sun />
     </button>
 
     <a class="icon-btn mx-2" href="https://vuejs.org/">
