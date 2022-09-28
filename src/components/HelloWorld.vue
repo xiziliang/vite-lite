@@ -1,12 +1,44 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useCounterStore } from '@/store'
+import { ref, shallowRef } from "vue";
+import { useCounterStore } from "@/store";
 
-defineProps<{ msg: string }>()
+defineProps<{ msg: string }>();
 
-const count = ref(0)
-const counter = useCounterStore()
+const count = ref(0);
+const counter = useCounterStore();
 
+const frameworks = shallowRef([
+  {
+    title: "Angular",
+    href: "https://angular.io/",
+    icon: "i-logos-angular-icon",
+  },
+  {
+    title: "Svelte",
+    href: "https://svelte.dev/",
+    icon: "i-logos-svelte-icon",
+  },
+  {
+    title: "Solid",
+    href: "https://www.solidjs.com/",
+    icon: "i-logos-solidjs-icon",
+  },
+  {
+    title: "React",
+    href: "https://reactjs.org/",
+    icon: "i-logos-react",
+  },
+  {
+    title: "Vue",
+    href: "https://vuejs.org/",
+    icon: "i-logos-vue",
+  },
+  {
+    title: "GitHub",
+    href: "https://github.com/xiziliang/vite-lite",
+    icon: "i-logos:github-icon",
+  },
+]);
 </script>
 
 <template>
@@ -15,7 +47,7 @@ const counter = useCounterStore()
   <div class="card">
     <div class="btns" flex="~ gap4" items-center>
       <el-button @click="count++">count is {{ count }}</el-button>
-      <div flex-1 text-center>{{ counter.count }} ----- {{ counter.doubleCount }}</div> 
+      <div flex-1 text-center>{{ counter.count }} ----- {{ counter.doubleCount }}</div>
       <el-button type="primary" size="default" @click="counter.increment">加一</el-button>
     </div>
     <p>
@@ -35,21 +67,16 @@ const counter = useCounterStore()
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 
-  <nav text-xl mt-6>
-    <a class="icon-btn mx-2">
-      <div i-logos:chrome />
-    </a>
-
-    <button class="icon-btn mx-2" >
-      <div i-carbon-sun />
-    </button>
-
-    <a class="icon-btn mx-2" href="https://vuejs.org/">
-      <div i-logos-vue />
-    </a>
-
-    <a class="icon-btn mx-2" href="https://github.com/antfu/vitesse" target="_blank" title="GitHub">
-      <div i-logos:github-icon />
+  <nav class="frameworks" text-xl mt-6>
+    <a
+      v-for="item in frameworks"
+      class="icon-btn mx-2"
+      :key="item.title"
+      :href="item.href"
+      :title="item.title"
+      target="_blank"
+    >
+      <div :class="item.icon" />
     </a>
   </nav>
 </template>
