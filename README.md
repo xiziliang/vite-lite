@@ -39,6 +39,7 @@
 ### 插件
 
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
+- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 等，无需导入
 
 ### VS Code插件
 
@@ -50,7 +51,7 @@
 
 ### GitHub 模板
 
-[使用这个模板创建仓库](https://github.com/antfu/vitesse-lite/generate).
+[使用这个模板创建仓库](https://github.com/xiziliang/vite-lite/generate).
 
 ### 克隆到本地
 
