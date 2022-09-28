@@ -5,6 +5,8 @@ import { useCounterStore } from "@/store";
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+const $count = $ref(0);
+
 const counter = useCounterStore();
 
 const frameworks = shallowRef([
@@ -47,6 +49,7 @@ const frameworks = shallowRef([
   <div class="card">
     <div class="btns" flex="~ gap4" items-center>
       <el-button @click="count++">count is {{ count }}</el-button>
+      <el-button @click="$count++">$count is {{ $count }}</el-button>
       <div flex-1 text-center>{{ counter.count }} ----- {{ counter.doubleCount }}</div>
       <el-button type="primary" size="default" @click="counter.increment">加一</el-button>
     </div>
