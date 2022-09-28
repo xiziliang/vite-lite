@@ -12,10 +12,15 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "types": ["element-plus/global"],
+    "types": [
+      "element-plus/global", 
+      "vite/client",
+      "vue/ref-macros",
+    ],
     "paths": {
       "@/*": ["./src/*"],
     },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["dist", "node_modules"]
 }
