@@ -4,6 +4,8 @@ import {
   presetIcons,
   presetUno,
   presetWebFonts,
+  transformerVariantGroup,
+  transformerDirectives,
 } from 'unocss'
 
 export default defineConfig({
@@ -25,5 +27,9 @@ export default defineConfig({
         mono: 'DM Mono',
       },
     }),
+  ],
+  transformers: [
+    transformerVariantGroup(),
+    transformerDirectives(),
   ],
 })
