@@ -31,7 +31,7 @@ export default defineConfig({
       imports: [
         'vue/macros',
       ],
-      dts: 'src/vue-macros.d.ts',
+      dts: 'src/typings/vue-macros.d.ts',
       vueTemplate: true,
     })
   ],
