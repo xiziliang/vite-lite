@@ -12,11 +12,6 @@ body,
   align-items: center;
 }
 
-// NOTE: tailwind.css默认样式会将盒子改为怪异盒
-*, ::before, ::after {
-  box-sizing: content-box;
-}
-
 a {
   font-weight: 500;
   color: #646cff;

@@ -1,1 +1,7 @@
-@use './globe.scss'
+// 重置element-plus style
+// NOTE: 有两种方式重置css
+//       1. 重置element-plus生成的scss变量
+//       2. 重置css变量
+@use './element-plus.scss';
+@use './globe.scss';
+

@@ -8,7 +8,6 @@ import "./styles/index.scss"
 import 'uno.css'
 
 import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
 
 const app = createApp(App)
 const pinia = createPinia()
