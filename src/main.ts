@@ -5,7 +5,9 @@ import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'
 import "./styles/index.scss"
-import 'uno.css'
+
+// NOTE: 开启mode: vue-scoped需要注释import 'uno.css'
+// import 'uno.css'
 
 import ElementPlus from 'element-plus'
 

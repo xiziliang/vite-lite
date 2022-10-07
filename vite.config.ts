@@ -24,7 +24,10 @@ export default defineConfig({
 
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
-    Unocss(),
+    Unocss({
+      // NOTE: 如果在组件中加了<style scoped>，并且要对某个组件进行样式穿透，需要修改mode为vue-scoped
+      mode: 'vue-scoped',
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
