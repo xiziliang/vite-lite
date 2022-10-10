@@ -2,7 +2,9 @@
   "name": "vite-lite",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
+  "description": "Vite + Vue Starter Template",
+  "author": "Xzl <https://github.com/xiziliang>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
