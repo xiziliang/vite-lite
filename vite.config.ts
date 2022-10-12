@@ -1,8 +1,11 @@
 /// <reference types="node" />
 
 import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
 import * as path from 'path'
+
+import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
+import VueMacros from 'unplugin-vue-macros/vite'
 import PluginTs from 'vite-plugin-ts'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -17,9 +20,14 @@ export default defineConfig({
     },
   },
   plugins: [
-    Vue({
-      reactivityTransform: true,
-    }), 
+    VueMacros({
+      plugins: {
+        vue: Vue({
+          reactivityTransform: true,
+        }),
+        vueJsx: VueJsx()
+      }
+    }),
     PluginTs(),
 
     // https://github.com/antfu/unocss

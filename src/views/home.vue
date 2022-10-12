@@ -2,6 +2,12 @@
   // This starter template is using Vue 3 <script setup> SFCs
   // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
   import HelloWorld from '@/components/HelloWorld.vue'
+
+  import { Test } from '@/components/test';
+
+  defineOptions({
+    name: 'Home'
+  })
   </script>
   
   <template>
@@ -16,6 +22,9 @@
         <img src="@/assets/element-plus-logo.svg" class="logo" alt="Element-plus logo" />
       </a>
     </div>
+    <Test>
+      <div>123</div>
+    </Test>
     <HelloWorld msg="Vite + Vue + Element-Plus" />
   </template>
   

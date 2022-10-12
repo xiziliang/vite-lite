@@ -16,6 +16,7 @@
       "element-plus/global", 
       "vite/client",
       "vue/ref-macros",
+      "unplugin-vue-macros/macros-global",
     ],
     "paths": {
       "@/*": ["./src/*"],
