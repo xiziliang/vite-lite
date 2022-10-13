@@ -40,6 +40,8 @@
 
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 等，无需导入
+- [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - 探索并扩充更多宏和语法糖到 Vue
+- [`plugin-vue-jsx`](https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx) - 支持JSX、TSX语法
 
 ### VS Code插件
 
