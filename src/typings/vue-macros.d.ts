@@ -11,7 +11,7 @@ declare global {
 }
 // for vue template auto import
 import { UnwrapRef } from 'vue'
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface ComponentCustomProperties {
     readonly $$: UnwrapRef<typeof import('vue/macros')['$$']>
     readonly $: UnwrapRef<typeof import('vue/macros')['$']>
