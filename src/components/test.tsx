@@ -11,11 +11,9 @@ export const Test = defineComponent({
         <div ref={countRef}>
           {count.value}
         </div>
-        <div>
           {defaultSlot}
-        </div>
         <div>
-          <el-button type="primary" size="default" onClick={() => count.value++}>count++</el-button>
+          <el-button type="primary" size="default" onClick={() => count.value++}>test++</el-button>
         </div>
       </Fragment>
     )
