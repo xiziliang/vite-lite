@@ -1,7 +1,7 @@
 /// <reference types="node" />
 
 import { defineConfig } from 'vite'
-import * as path from 'path'
+import { resolve } from 'node:path'
 
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -16,7 +16,7 @@ const rootPath = __dirname;
 export default defineConfig({
   resolve: {
     alias: {
-      '@': `${path.resolve(rootPath, 'src')}`,
+      '@': `${resolve(rootPath, 'src')}`,
     },
   },
   plugins: [
