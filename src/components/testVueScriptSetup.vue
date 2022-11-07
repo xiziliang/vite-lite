@@ -2,6 +2,10 @@
 import { ref, shallowRef } from "vue";
 import { useCounterStore } from "@/store";
 
+defineOptions({
+  name: "TestVueScriptSetup",
+});
+
 defineProps<{ msg: string }>();
 
 const count = ref(0);

@@ -1,6 +1,8 @@
 import { ref, defineComponent, Fragment } from 'vue';
 
-export const Test = defineComponent({
+export const TestTsx = defineComponent({
+  name: 'TestTsx',
+
   setup(props, { slots }) {
     const count = ref(0);
     const countRef = ref();
@@ -13,7 +15,7 @@ export const Test = defineComponent({
         </div>
           {defaultSlot}
         <div>
-          <el-button type="primary" size="default" onClick={() => count.value++}>test++</el-button>
+          <el-button type="primary" size="default" onClick={() => count.value++}>testTsx++</el-button>
         </div>
       </Fragment>
     )

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from "@/components/HelloWorld.vue";
+import TestVueScriptSetup from "@/components/testVueScriptSetup.vue";
 
-import { Test } from "@/components/test";
+import { TestTsx } from "@/components/testTsx";
 
 import { TestTs } from "@/components/testTS";
+
+import TestVueSetup from "@/components/testVueSetup.vue";
 
 defineOptions({
   name: "Home",
@@ -24,13 +26,16 @@ defineOptions({
       <img src="@/assets/element-plus-logo.svg" class="logo" alt="Element-plus logo" />
     </a>
   </div>
-  <Test>
-    <div>test</div>
-  </Test>
+  <TestTsx>
+    <div>testTsx</div>
+  </TestTsx>
   <TestTs>
     <div>testTS</div>
   </TestTs>
-  <HelloWorld msg="Vite + Vue + Element-Plus" />
+  <TestVueSetup>
+    <div>testVueSetup</div>
+  </TestVueSetup>
+  <TestVueScriptSetup msg="testVueScriptSetup" />
 </template>
 
 <style lang="scss" scoped>

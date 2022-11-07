@@ -2,6 +2,8 @@ import { ref, defineComponent, h } from 'vue';
 import { ElButton } from 'element-plus'
 
 export const TestTs = defineComponent({
+  name: 'TestTS',
+
   setup(props, { slots }) {
     const count = ref(0);
     const countRef = ref();
