@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, shallowRef } from "vue";
 import { useCounterStore } from "@/store";
+import { CustomStore } from "@/utils";
 
 defineOptions({
   name: "TestVueScriptSetup",
@@ -54,8 +55,16 @@ const frameworks = shallowRef([
     <div class="btns" flex="~ gap4" items-center>
       <el-button @click="count++">count is {{ count }}</el-button>
       <el-button @click="$count++">$count is {{ $count }}</el-button>
-      <div flex-1 text-center>{{ counter.count }} ----- {{ counter.doubleCount }}</div>
+      <div flex-1 text-center>
+        {{ counter.name }} --- {{ counter.count }} ----- {{ counter.doubleCount }}
+      </div>
       <el-button type="primary" size="default" @click="counter.increment">加一</el-button>
+      <el-button
+        type="primary"
+        size="default"
+        @click="((counter as unknown) as CustomStore).$custom_reset()"
+        >reset</el-button
+      >
     </div>
     <p>
       Edit

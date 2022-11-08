@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { resetStore } from '@/utils';
 import { $router } from '@/router'
 import App from './App.vue'
 
@@ -13,6 +14,7 @@ import ElementPlus from 'element-plus'
 
 const app = createApp(App)
 const pinia = createPinia()
+pinia.use(resetStore);
 
 app
 .use($router)
