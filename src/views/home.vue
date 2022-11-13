@@ -50,4 +50,9 @@ defineOptions({
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
+
+/* global style it work */
+:global(body) {
+  background-color: rgb(233, 232, 232);
+}
 </style>

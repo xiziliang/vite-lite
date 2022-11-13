@@ -27,3 +27,9 @@ export default defineComponent({
     <el-button type="primary" size="default" @click="() => count++">testVue++</el-button>
   </div>
 </template>
+<style scoped lang="scss">
+/* slot style it work */
+:slotted(div) {
+  color: red;
+}
+</style>
