@@ -1,4 +1,4 @@
-import { ref, defineComponent, h } from 'vue';
+import { ref, defineComponent, h, renderSlot } from 'vue';
 import { ElButton } from 'element-plus'
 
 export const TestTs = defineComponent({
@@ -18,7 +18,8 @@ export const TestTs = defineComponent({
         count.value
       ),
       // NOTE: or slots.default ? h(slots.default) : undefined,
-      slots.default?.(),
+      // .     or [renderSlot(slots, 'default')]
+      [slots.default?.()],
       h(
         'div',
         h(
