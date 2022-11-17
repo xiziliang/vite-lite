@@ -6,7 +6,6 @@ export const TestTs = defineComponent({
 
   setup(props, { slots }) {
     const count = ref(0);
-    const state = reactive();
     const countRef = ref();
     const label = ref('TestTS++');
 
