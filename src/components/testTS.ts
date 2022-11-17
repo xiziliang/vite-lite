@@ -1,4 +1,4 @@
-import { ref, defineComponent, h, renderSlot } from 'vue';
+import { ref, defineComponent, h } from 'vue';
 import { ElButton } from 'element-plus'
 
 export const TestTs = defineComponent({
@@ -6,6 +6,7 @@ export const TestTs = defineComponent({
 
   setup(props, { slots }) {
     const count = ref(0);
+    const state = reactive();
     const countRef = ref();
     const label = ref('TestTS++');
 
