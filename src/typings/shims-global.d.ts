@@ -69,10 +69,5 @@ interface AsyncIterator<T, TReturn = any, TNext = undefined> {
 interface AsyncIteratorConstructor {
   static from<T>(iterable: Iterable<T>): Iterator<T, TReturn, TNext>;
 }
+
 declare const AsyncIterator: AsyncIteratorConstructor;
-
-interface Jquery {
-  [key: string]: any;
-}
-
-declare const jquery: Jquery;

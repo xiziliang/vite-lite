@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, shallowRef } from "vue";
 import { useCounterStore } from "@/store";
-import { CustomStore } from "@/utils";
 
 defineOptions({
   name: "TestVueScriptSetup",
@@ -59,10 +58,7 @@ const frameworks = shallowRef([
         {{ counter.name }} --- {{ counter.count }} ----- {{ counter.doubleCount }}
       </div>
       <el-button type="primary" size="default" @click="counter.increment">加一</el-button>
-      <el-button
-        type="primary"
-        size="default"
-        @click="((counter as unknown) as CustomStore).$custom_reset()"
+      <el-button type="primary" size="default" @click="counter.$setup_reset()"
         >reset</el-button
       >
     </div>
