@@ -1,6 +1,7 @@
 import { ref, defineComponent, h } from 'vue';
 import { ElButton } from 'element-plus'
 
+// ts的render函数中不会自动结构ref，需要带.value
 export const TestTs = defineComponent({
   name: 'TestTS',
 
