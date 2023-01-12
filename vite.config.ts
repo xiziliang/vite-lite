@@ -9,6 +9,7 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import PluginTs from 'vite-plugin-ts'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 const rootPath = __dirname;
 
@@ -44,7 +45,8 @@ export default defineConfig({
       ],
       dts: 'src/typings/vue-macros.d.ts',
       vueTemplate: true,
-    })
+    }),
+    visualizer()
   ],
   server: {
     host: '0.0.0.0',
