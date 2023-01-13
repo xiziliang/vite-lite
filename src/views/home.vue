@@ -12,6 +12,31 @@ import TestVueSetup from "@/components/testVueSetup.vue";
 defineOptions({
   name: "Home",
 });
+
+const obj = {
+  a: 123,
+  b: 23,
+  v: 234,
+};
+
+(Object.prototype as any).cc = function () {
+  console.log("cc");
+};
+
+console.log(Object.getOwnPropertyDescriptor(Object.prototype, "hasOwnProperty"));
+
+Object.defineProperty(Object.prototype, "cc", {
+  writable: true,
+  enumerable: false,
+});
+// Object.prototype.ccc = 123;
+for (const key in obj) {
+  console.log(key);
+}
+
+console.log(obj);
+console.log(Object.keys(obj));
+// console.log(Object.getOwnPropertyDescriptor(obj, "cc"));
 </script>
 
 <template>
