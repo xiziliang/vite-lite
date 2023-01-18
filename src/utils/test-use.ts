@@ -1,11 +1,10 @@
-import { ref } from "vue";
+import { ref, Ref, unref } from "vue";
 import { useAutoAnimate } from "@formkit/auto-animate/vue";
 
 export function testPromise() {
   function returnPromise() {
     return new Promise((resolve, reject) => {
       // resolve("hahha");
-
       reject("失败");
     });
   };
@@ -26,7 +25,8 @@ export function testPromise() {
 }
 
 export function testAutoAnimate() {
-  const length = ref(new Array(10).fill(null).map((x, i) => i + 1));
+
+  const lengthArr = ref(new Array(50).fill(null).map((x, i) => i + 1));
 
   const isSelected = ref(1);
   const onHandleClick = (item?: any) => {
@@ -44,13 +44,18 @@ export function testAutoAnimate() {
     isEnable.value ? enable(true) : enable(false);
   };
 
+  const reDisruptSort = (length: Ref<number[]> | number[]) => {
+    lengthArr.value = unref(length).sort(() => Math.random() >= 0.5 ? 1 : -1);
+  }
+
   return {
     isSelected,
     isEnable,
-    length,
+    length: lengthArr,
     animateRef,
 
     toggle,
     onHandleClick,
+    reDisruptSort,
   }
 }

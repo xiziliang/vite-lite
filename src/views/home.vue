@@ -16,6 +16,7 @@ const {
 
   toggle,
   onHandleClick,
+  reDisruptSort,
 } = testAutoAnimate();
 </script>
 
@@ -33,20 +34,29 @@ const {
     <el-button type="primary" size="default" @click="length.sort((a, b) => b - a)"
       >降序</el-button
     >
+    <el-button type="primary" size="default" @click="reDisruptSort(length)"
+      >打乱排序</el-button
+    >
     <el-button type="primary" size="default" @click="toggle">{{
       isEnable ? "开启动画" : "禁用动画"
     }}</el-button>
   </div>
 
-  <div ref="animateRef">
+  <div ref="animateRef" grid="~ gap-12px cols-6 lg:cols-10" p-20>
     <div
+      w-100px
+      h-100px
+      flex="~"
+      justify-center
+      items-center
+      bg-blue
       v-for="item in length"
       :key="item"
       :class="[item === isSelected ? 'selected' : null]"
       v-memo="[item === isSelected]"
       @click="onHandleClick(item)"
     >
-      {{ item + "我是列表" }}
+      {{ "第" + item + "个元素" }}
     </div>
   </div>
 </template>
