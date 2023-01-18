@@ -1,83 +1,63 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import TestVueScriptSetup from "@/components/testVueScriptSetup.vue";
-
-import { TestTsx } from "@/components/testTsx";
-
-import { TestTs } from "@/components/testTS";
-
-import TestVueSetup from "@/components/testVueSetup.vue";
+import { testAutoAnimate, testPromise } from "@/utils";
 
 defineOptions({
   name: "Home",
 });
 
-const obj = {
-  a: 123,
-  b: 23,
-  v: 234,
-};
+const { promiseTest } = testPromise();
+promiseTest();
 
-(Object.prototype as any).cc = function () {
-  console.log("cc");
-};
+const {
+  length,
+  isEnable,
+  isSelected,
+  animateRef,
 
-console.log(Object.getOwnPropertyDescriptor(Object.prototype, "hasOwnProperty"));
-
-Object.defineProperty(Object.prototype, "cc", {
-  writable: true,
-  enumerable: false,
-});
-// Object.prototype.ccc = 123;
-for (const key in obj) {
-  console.log(key);
-}
-
-console.log(obj);
-console.log(Object.keys(obj));
-// console.log(Object.getOwnPropertyDescriptor(obj, "cc"));
+  toggle,
+  onHandleClick,
+} = testAutoAnimate();
 </script>
 
 <template>
-  <div flex="~ gap-4">
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="@/assets/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-    <a href="https://element-plus.org/zh-CN/" target="_blank">
-      <img src="@/assets/element-plus-logo.svg" class="logo" alt="Element-plus logo" />
-    </a>
+  <div>
+    <el-button
+      type="primary"
+      size="default"
+      @click="() => length.push(Math.max(...length) + 1)"
+      >点击添加一行</el-button
+    >
+    <el-button type="primary" size="default" @click="length.sort((a, b) => a - b)"
+      >生序</el-button
+    >
+    <el-button type="primary" size="default" @click="length.sort((a, b) => b - a)"
+      >降序</el-button
+    >
+    <el-button type="primary" size="default" @click="toggle">{{
+      isEnable ? "开启动画" : "禁用动画"
+    }}</el-button>
   </div>
-  <TestTsx>
-    <div>testTsx</div>
-  </TestTsx>
-  <TestTs>
-    <div>testTS</div>
-  </TestTs>
-  <TestVueSetup>
-    <div>testVueSetup</div>
-  </TestVueSetup>
-  <TestVueScriptSetup msg="testVueScriptSetup" />
+
+  <div ref="animateRef">
+    <div
+      v-for="item in length"
+      :key="item"
+      :class="[item === isSelected ? 'selected' : null]"
+      v-memo="[item === isSelected]"
+      @click="onHandleClick(item)"
+    >
+      {{ item + "我是列表" }}
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.logo {
-  height: 10em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-
 /* global style it work */
 :global(body) {
   background-color: rgb(233, 232, 232);
+}
+
+.selected {
+  background: skyblue;
 }
 </style>
