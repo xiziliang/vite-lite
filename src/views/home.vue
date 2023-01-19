@@ -17,21 +17,18 @@ const {
   toggle,
   onHandleClick,
   reDisruptSort,
+  onHandleDel,
+  onHandleAdd,
 } = testAutoAnimate();
 </script>
 
 <template>
   <div>
-    <el-button
-      type="primary"
-      size="default"
-      @click="() => length.push(Math.max(...length) + 1)"
-      >点击添加一行</el-button
+    <el-button type="primary" size="default" @click="onHandleAdd">添加一个元素</el-button>
+    <el-button type="primary" size="default" @click="length.sort((a, b) => a.id - b.id)"
+      >升序</el-button
     >
-    <el-button type="primary" size="default" @click="length.sort((a, b) => a - b)"
-      >生序</el-button
-    >
-    <el-button type="primary" size="default" @click="length.sort((a, b) => b - a)"
+    <el-button type="primary" size="default" @click="length.sort((a, b) => b.id - a.id)"
       >降序</el-button
     >
     <el-button type="primary" size="default" @click="reDisruptSort(length)"
@@ -50,13 +47,24 @@ const {
       justify-center
       items-center
       bg-blue
-      v-for="item in length"
-      :key="item"
-      :class="[item === isSelected ? 'selected' : null]"
-      v-memo="[item === isSelected]"
+      text-white
+      cursor-pointer
+      v-for="(item, index) in length"
+      :key="item.id"
+      class="box-item"
+      :class="[item.id === isSelected ? 'selected' : null]"
+      v-memo="[item.id === isSelected]"
       @click="onHandleClick(item)"
     >
-      {{ "第" + item + "个元素" }}
+      <el-dropdown trigger="contextmenu" type="primary" placement="top">
+        {{ "第" + item.id + "个元素" }}
+
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="onHandleDel(index)"> 删除 </el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -67,7 +75,8 @@ const {
   background-color: rgb(233, 232, 232);
 }
 
-.selected {
-  background: skyblue;
+.box-item.selected {
+  background: rgb(245, 214, 36);
+  color: black;
 }
 </style>

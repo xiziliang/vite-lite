@@ -24,13 +24,16 @@ export function testPromise() {
   }
 }
 
-export function testAutoAnimate() {
+interface TestItem {
+  id: number;
+}
 
-  const lengthArr = ref(new Array(50).fill(null).map((x, i) => i + 1));
+export function testAutoAnimate() {
+  const lengthArr = ref<TestItem[]>(new Array(50).fill(null).map((x, i) => ({ id: i + 1 })));
 
   const isSelected = ref(1);
-  const onHandleClick = (item?: any) => {
-    isSelected.value = item;
+  const onHandleClick = (item: TestItem) => {
+    isSelected.value = item.id;
   };
 
   const isEnable = ref(true);
@@ -44,8 +47,18 @@ export function testAutoAnimate() {
     isEnable.value ? enable(true) : enable(false);
   };
 
-  const reDisruptSort = (length: Ref<number[]> | number[]) => {
+  const reDisruptSort = (length: Ref<TestItem[]> | TestItem[]) => {
     lengthArr.value = unref(length).sort(() => Math.random() >= 0.5 ? 1 : -1);
+  }
+
+  const onHandleDel = (index: number) => {
+    lengthArr.value.splice(index, 1);
+  };
+
+  const onHandleAdd = () => {
+    lengthArr.value.push({
+      id: Math.max(...lengthArr.value.map(x => x.id)) + 1,
+    })
   }
 
   return {
@@ -56,6 +69,11 @@ export function testAutoAnimate() {
 
     toggle,
     onHandleClick,
+    /** 乱序 */
     reDisruptSort,
+    /** 删除 */
+    onHandleDel,
+    /** 添加一个元素 */
+    onHandleAdd,
   }
 }
