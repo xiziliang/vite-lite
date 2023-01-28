@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { testAutoAnimate, testPromise } from "@/utils";
+import { testAutoAnimate, testPromise, testGenerator } from "@/utils";
+import { ref } from "vue";
 
 defineOptions({
   name: "Home",
@@ -20,6 +21,37 @@ const {
   onHandleDel,
   onHandleAdd,
 } = testAutoAnimate();
+
+const data = ref([
+  {
+    id: 1,
+    name: "xzl",
+    children: [
+      {
+        id: 2,
+        name: "2--xzll",
+        children: [
+          {
+            id: 4,
+            name: "4--xzlll",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "3--xzll",
+      },
+    ],
+  },
+  {
+    id: 11,
+    name: "11---xzl",
+  },
+]);
+
+const { tree, array } = testGenerator(data);
+
+console.log(tree.value, array.value);
 </script>
 
 <template>
@@ -38,7 +70,6 @@ const {
       isEnable ? "开启动画" : "禁用动画"
     }}</el-button>
   </div>
-
   <div ref="animateRef" grid="~ gap-12px cols-6 lg:cols-10" p-20>
     <div
       w-100px

@@ -1,4 +1,4 @@
-import { ref, Ref, unref } from "vue";
+import { ref, Ref, unref, computed } from "vue";
 import { useAutoAnimate } from "@formkit/auto-animate/vue";
 
 export function testPromise() {
@@ -15,8 +15,6 @@ export function testPromise() {
 
   const promiseTest = async () => {
     const [error, res] = await promiseMiddleWare(returnPromise());
-    console.log(error);
-    console.log(res);
   };
 
   return {
@@ -75,5 +73,24 @@ export function testAutoAnimate() {
     onHandleDel,
     /** 添加一个元素 */
     onHandleAdd,
+  }
+}
+
+function* tree2array(nodes: any[]): any {
+  for (const node of nodes) {
+    yield node;
+    if (node.children) yield* tree2array(node.children);
+  }
+}
+
+export function testGenerator<T>(data: T[] | Ref<T[]>) {
+  const tree = computed(() => unref(data));
+  const array = computed(() => [...tree2array(tree.value)]);
+
+  return {
+    /** 树结构 */
+    tree,
+    /** 由树结构转的数组结构 */
+    array,
   }
 }
