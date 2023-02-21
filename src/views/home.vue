@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import { testAutoAnimate, testPromise, testGenerator } from "@/utils";
-import { ref } from "vue";
+import { testAutoAnimate, testPromise, testGenerator, useLoading } from "@/utils";
+import { ref, onMounted } from "vue";
 
 defineOptions({
   name: "Home",
 });
+
+const { loading } = useLoading();
+
+loading.value = true;
+
+setTimeout(() => (loading.value = false), 3000);
 
 const { promiseTest } = testPromise();
 promiseTest();
@@ -50,8 +56,6 @@ const data = ref([
 ]);
 
 const { tree, array } = testGenerator(data);
-
-console.log(tree.value, array.value);
 </script>
 
 <template>

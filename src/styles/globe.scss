@@ -30,3 +30,16 @@ h1 {
 .card {
   padding: 2em;
 }
+
+@keyframes loadingCircle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.global-loading-icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  animation: loadingCircle 1s infinite linear;
+}
