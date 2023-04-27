@@ -172,3 +172,25 @@ export function useLoading() {
     loading,
   }
 }
+
+
+/** 深度优先搜索（DFS) */
+export function useDfs(node: any, path: any[], result: any[], key = "code") {
+  // 将当前节点添加到路径中
+  path.push(node[key]);
+
+  if (!node.children || node.children.length === 0) {
+    // 如果当前节点是叶子节点，将其对应的路径数组添加到结果数组中
+    result.push(path.slice());
+  } else {
+    // 如果当前节点有子节点，则继续遍历子节点
+    for (let i = 0; i < node.children.length; i++) {
+      // 复制当前的路径，以便在遍历其他子节点时不会互相干扰
+      const newPath = path.slice();
+      useDfs(node.children[i], newPath, result);
+    }
+  }
+
+  // 在回溯之前，从路径中移除当前节点
+  path.pop();
+};
