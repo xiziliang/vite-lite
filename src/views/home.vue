@@ -1,6 +1,14 @@
 <script setup lang="ts">
-import { testAutoAnimate, testPromise, testGenerator, useLoading } from "@/utils";
-import { ref, onMounted } from "vue";
+import {
+  testAutoAnimate,
+  testPromise,
+  testGenerator,
+  useLoading,
+  MusicTypeKeys,
+  MusicTypeNameMaps,
+  MusicTypeMaps,
+} from "@/utils";
+import { ref } from "vue";
 
 defineOptions({
   name: "Home",
@@ -56,6 +64,10 @@ const data = ref([
 ]);
 
 const { tree, array } = testGenerator(data);
+
+console.log(MusicTypeKeys);
+console.log(MusicTypeNameMaps);
+console.log(MusicTypeMaps);
 </script>
 
 <template>
