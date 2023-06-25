@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
-import VueMacros from 'unplugin-vue-macros/vite'
+import VueMacros from 'unplugin-vue-macros'
 import PluginTs from 'vite-plugin-ts'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -21,7 +21,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    VueMacros({
+    VueMacros.vite({
       plugins: {
         vue: Vue({
           reactivityTransform: true,
