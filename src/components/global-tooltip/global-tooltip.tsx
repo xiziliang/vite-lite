@@ -17,7 +17,7 @@ export const GlobalTooltip = defineComponent({
       default : 'dark',
     },
     placement: {
-      type: String as PropType<any>,
+      type: String as PropType<Placement>,
       default: 'top',
     },
   },

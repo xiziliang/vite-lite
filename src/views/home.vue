@@ -65,9 +65,17 @@ const data = ref([
 
 const { tree, array } = testGenerator(data);
 
-console.log(MusicTypeKeys);
-console.log(MusicTypeNameMaps);
-console.log(MusicTypeMaps);
+// console.log(MusicTypeKeys);
+// console.log(MusicTypeNameMaps);
+// console.log(MusicTypeMaps);
+
+// const data1: number[] = [1,2,3];
+// const data1 = undefined;
+// const arr = (data1)?.filter(
+//   (x) => ![1, 2, 3, 4].includes(+x)
+// );
+
+// console.log(arr);
 </script>
 
 <template>
