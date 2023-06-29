@@ -8,7 +8,7 @@ import {
   MusicTypeNameMaps,
   MusicTypeMaps,
 } from "@/utils";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 defineOptions({
   name: "Home",
@@ -114,6 +114,8 @@ console.log(MusicTypeMaps);
       </el-dropdown>
     </div>
   </div>
+  <div v-tooltip="'阿西吧是谁是谁'">outsidesdasdadsdsdsdss</div>
+  <div v-tooltip="{ effect: 'light', placement: 'left', content: 'sdsdadadasadad' }">你好</div>
 </template>
 
 <style lang="scss" scoped>

@@ -1,0 +1,45 @@
+@function tooltipSelector($placement) {
+  @return '[data-popper-placement^="#{$placement}"]';
+}
+
+$tooltipArrowColor: black;
+$tooltipArrowWhiteColor: white;
+
+@mixin common-styling($arrow-color) {
+  #{tooltipSelector(top)} & {
+    bottom: -8px;
+    border-top-color: $arrow-color;
+  }
+
+  #{tooltipSelector(bottom)} & {
+    top: -8px;
+    border-bottom-color: $arrow-color;
+  }
+
+  #{tooltipSelector(left)} & {
+    right: -8px;
+    border-left-color: $arrow-color;
+  }
+
+  #{tooltipSelector(right)} & {
+    left: -8px;
+    border-right-color: $arrow-color;
+  }
+}
+
+.tooltip-arrow {
+  border: solid 4px transparent;
+  @include common-styling($tooltipArrowColor)
+}
+
+.tooltip-arrow.is-light {
+  border: solid 4px transparent;
+  @include common-styling($tooltipArrowWhiteColor)
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}

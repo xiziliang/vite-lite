@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { resetStore } from '@/utils';
+import directives from '@/directives'
 import { $router } from '@/router'
-import App from './App.vue'
+import App from './App'
 
 import '@unocss/reset/tailwind.css'
 import "./styles/index.scss"
@@ -19,5 +20,6 @@ pinia.use(resetStore);
 app
 .use($router)
 .use(pinia)
+.use(directives)
 .use(ElementPlus)
 .mount('#app')
