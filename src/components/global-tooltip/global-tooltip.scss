@@ -3,9 +3,11 @@
 }
 
 $tooltipArrowColor: black;
+$tooltipBgColor: #303133;
+
 $tooltipArrowWhiteColor: white;
 
-@mixin common-styling($arrow-color) {
+@mixin common-arrow-styling($arrow-color) {
   #{tooltipSelector(top)} & {
     bottom: -8px;
     border-top-color: $arrow-color;
@@ -27,15 +29,42 @@ $tooltipArrowWhiteColor: white;
   }
 }
 
+@mixin theme-styling($color, $bg-color) {
+  color: $color;
+  background: $bg-color;
+  border: 1px solid $bg-color;
+}
+
+.global-tooltip {
+  position: absolute;
+  border-radius: 4px;
+  padding: 5px 11px;
+  z-index: 2000;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 10px;
+  word-wrap: break-word;
+  visibility: visible;
+
+}
+.global-tooltip.is-dark {
+  @include  theme-styling($tooltipArrowWhiteColor, $tooltipBgColor)
+}
+
+.global-tooltip.is-light {
+  @include  theme-styling($tooltipArrowColor, $tooltipArrowWhiteColor)
+}
+
 .tooltip-arrow {
   border: solid 4px transparent;
-  @include common-styling($tooltipArrowColor)
+  @include common-arrow-styling($tooltipArrowColor)
 }
 
 .tooltip-arrow.is-light {
   border: solid 4px transparent;
-  @include common-styling($tooltipArrowWhiteColor)
+  @include common-arrow-styling($tooltipArrowWhiteColor)
 }
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

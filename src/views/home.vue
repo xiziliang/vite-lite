@@ -115,7 +115,7 @@ console.log(MusicTypeMaps);
     </div>
   </div>
   <div v-tooltip="'阿西吧是谁是谁'">outsidesdasdadsdsdsdss</div>
-  <div v-tooltip="{ effect: 'light', placement: 'left', content: 'sdsdadadasadad' }">你好</div>
+  <div v-tooltip="{ effect: 'light', placement: 'top', content: 'sdsdadadasadad' }">你好</div>
 </template>
 
 <style lang="scss" scoped>

@@ -79,7 +79,7 @@ export const GlobalTooltip = defineComponent({
           hidden={this.content == null}
           style={{zIndex: 99999, whiteSpace: 'pre-line'}}
           class={[
-            'el-popper',
+            'global-tooltip',
             'is-' + this.effect,
             this.popperClass,
           ]}>
