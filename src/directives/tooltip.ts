@@ -2,6 +2,17 @@ import { markRaw, reactive } from 'vue';
 import { type VNode, ref, type ObjectDirective } from 'vue';
 import type { Placement } from '@popperjs/core';
 
+interface TooltipPropModel {
+  content: string | number | VNode | VNode[];
+  target: HTMLElement;
+  popperClass?: string;
+  effect?: 'dark' | 'light';
+  placement?: Placement;
+  overflowOnly?: 'x' | 'y' | 'both';
+}
+
+export const TooltipsGlobal = ref<TooltipPropModel[]>([]);
+
 /**
  * 简单的方式显示tooltip
  *
@@ -14,18 +25,6 @@ import type { Placement } from '@popperjs/core';
  * v-tooltip="{ placement: 'left', overflowOnly: true, content: '文字超出时在左边显示' }"
  * v-tooltip="null" // 不显示
  */
-
-interface TooltipPropModel {
-  content: string | number | VNode | VNode[];
-  target: HTMLElement;
-  popperClass?: string;
-  effect?: 'dark' | 'light';
-  placement?: Placement;
-  overflowOnly?: 'x' | 'y' | 'both';
-}
-
-export const TooltipsGlobal = ref<TooltipPropModel[]>([]);
-
 export const tooltip: ObjectDirective = {
   mounted(
     el: HTMLElement & { __tooltipModel?: TooltipPropModel },
