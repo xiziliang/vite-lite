@@ -13,8 +13,8 @@ export async function promiseMiddleWare<T>(promise: Promise<T>): Promise<any[]> 
 export function testPromise() {
   function returnPromise() {
     return new Promise((resolve, reject) => {
-      // resolve("hahha");
-      reject("失败");
+      resolve("hahha");
+      // reject("失败");
     });
   };
 
@@ -24,6 +24,7 @@ export function testPromise() {
 
   return {
     promiseTest,
+    returnPromise,
   }
 }
 
@@ -184,10 +185,10 @@ export function useDfs(node: any, path: any[], result: any[], key = "code") {
     result.push(path.slice());
   } else {
     // 如果当前节点有子节点，则继续遍历子节点
-    for (let i = 0; i < node.children.length; i++) {
+    for (const element of node.children) {
       // 复制当前的路径，以便在遍历其他子节点时不会互相干扰
       const newPath = path.slice();
-      useDfs(node.children[i], newPath, result);
+      useDfs(element, newPath, result);
     }
   }
 

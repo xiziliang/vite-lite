@@ -9,7 +9,7 @@ import {
   MusicTypeMaps,
 } from "@/utils";
 import { ref, onMounted } from "vue";
-
+import Sticky from '@/components/sticky.vue';
 defineOptions({
   name: "Home",
 });
@@ -20,8 +20,15 @@ loading.value = true;
 
 setTimeout(() => (loading.value = false), 3000);
 
-const { promiseTest } = testPromise();
-promiseTest();
+const { promiseTest, returnPromise } = testPromise();
+
+returnPromise()
+  .then((res) => {
+    return Promise.reject(new Error("failed result")); // 返回一个被拒绝的 Promise
+  })
+  .catch((error: Error) => {
+    console.log(error.message);
+  });
 
 const {
   length,
@@ -65,17 +72,9 @@ const data = ref([
 
 const { tree, array } = testGenerator(data);
 
-// console.log(MusicTypeKeys);
-// console.log(MusicTypeNameMaps);
-// console.log(MusicTypeMaps);
-
-// const data1: number[] = [1,2,3];
-// const data1 = undefined;
-// const arr = (data1)?.filter(
-//   (x) => ![1, 2, 3, 4].includes(+x)
-// );
-
-// console.log(arr);
+console.log(MusicTypeKeys);
+console.log(MusicTypeNameMaps);
+console.log(MusicTypeMaps);
 </script>
 
 <template>
@@ -94,6 +93,9 @@ const { tree, array } = testGenerator(data);
       isEnable ? "开启动画" : "禁用动画"
     }}</el-button>
   </div>
+  <Sticky :sticky-top="200">
+    123
+  </Sticky>
   <div ref="animateRef" grid="~ gap-12px cols-6 lg:cols-10" p-20>
     <div
       w-100px
@@ -122,8 +124,11 @@ const { tree, array } = testGenerator(data);
       </el-dropdown>
     </div>
   </div>
-  <div v-tooltip="'阿西吧是谁是谁'">outsidesdasdadsdsdsdss</div>
-  <div v-tooltip="{ effect: 'light', placement: 'top', content: 'sdsdadadasadad' }">你好</div>
+  <div flex="~ gap-12px">
+    <div v-tooltip="'阿西吧是谁是谁'">outsidesdasdadsdsdsdss</div>
+    <div v-tooltip="{ effect: 'light', placement: 'top', content: 'sdsdadadasadad' }">你好</div>
+  </div>
+
 </template>
 
 <style lang="scss" scoped>
