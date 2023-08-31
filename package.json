@@ -21,6 +21,7 @@
     "@popperjs/core": "^2.11.8",
     "@unocss/reset": "^0.53.3",
     "@vueuse/core": "^10.2.0",
+    "d3": "^7.8.5",
     "element-plus": "^2.3.7",
     "lodash-es": "^4.17.21",
     "pinia": "^2.1.4",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
+    "@types/d3": "^7.4.0",
     "@types/lodash-es": "^4.17.7",
     "@types/node": "^20.3.1",
     "@vitejs/plugin-vue": "^4.2.3",
