@@ -5,7 +5,7 @@
       :style="styles"
     >
       <slot>
-        <div>sticky</div>
+        <div>sticky test</div>
       </slot>
     </div>
   </div>
