@@ -14,13 +14,6 @@ defineOptions({
   name: "Home",
 });
 
-const { loading } = useLoading();
-
-
-loading.value = true;
-
-setTimeout(() => (loading.value = false), 3000);
-
 const { promiseTest, returnPromise } = testPromise();
 
 returnPromise()
@@ -73,9 +66,6 @@ const data = ref([
 
 const { tree, array } = testGenerator(data);
 
-console.log(MusicTypeKeys);
-console.log(MusicTypeNameMaps);
-console.log(MusicTypeMaps);
 </script>
 
 <template>
