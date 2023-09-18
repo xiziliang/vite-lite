@@ -75,8 +75,6 @@ const { tree, array } = testGenerator(data);
 console.log(MusicTypeKeys);
 console.log(MusicTypeNameMaps);
 console.log(MusicTypeMaps);
-
-console.log('d3js')
 </script>
 
 <template>
