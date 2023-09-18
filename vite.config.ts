@@ -35,8 +35,9 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue/macros',
+        '@vueuse/core'
       ],
-      dts: 'src/typings/vue-macros.d.ts',
+      dts: 'src/typings/auto-import.d.ts',
       vueTemplate: true,
     }),
     visualizer()

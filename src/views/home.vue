@@ -16,6 +16,7 @@ defineOptions({
 
 const { loading } = useLoading();
 
+
 loading.value = true;
 
 setTimeout(() => (loading.value = false), 3000);
