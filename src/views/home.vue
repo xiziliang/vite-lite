@@ -16,6 +16,18 @@ defineOptions({
 
 const { promiseTest, returnPromise } = testPromise();
 
+const f = async () => console.log('now');
+
+f().then(() => {
+  console.log('next')
+});
+
+/**
+ * Promise
+ * 
+ * then -> 如果return 的是一个普通值则会被封装成promise
+ *         如果return 的是一个promise，是resolve则会传递到下一个then，是reject则会被传递到下一个catch 
+ */
 returnPromise()
   .then((res) => {
     return Promise.reject(new Error("failed result")); // 返回一个被拒绝的 Promise
